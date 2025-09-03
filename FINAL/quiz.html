@@ -1,0 +1,74 @@
+<!doctype html>
+<html lang="th">
+  <head>
+    <meta charset="UTF-8">
+    <title>การพัฒนาสังคม</title>
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+  </head>
+  <body class="bg-amber-50 text-gray-900 font sans">
+<nav class="bg-red-900 text-white px-8 py-4 flex justify-between items-center shadow-md">
+    <h1 class="text-2xl font-bold">การพัฒนาสังคม</h1>
+    <ul class="flex gap-6">
+       <li><a href="index.html">หน้าแรก</a></li>
+      <li><a href="timeline.html">ความหมายและความสำคัญ</a></li>
+      <li><a href="kingdoms.html">ปัจจัยที่มีผลต่อการพัฒนาสังคม</a></li>
+      <li><a href="heroes.html">การศึกษาและการพัฒนาสังคม</a></li>
+      <li><a href="map.html">เทคโนโลยีกับการพัฒนาสังคม</a></li>
+       <li><a href="environ.html">บทบาทของประชาชนและชุมชน</a></li>
+      <li><a href="about.html">  การพัฒนาที่ยั่งยืน </a></li>
+      <li><a href="Develop.html"> แนวทางการพัฒนาสังคมในอนาคต </a></li>
+      <li><a href="quiz.html">แบบทดสอบ</a></li>
+    </ul>
+  </nav>
+   <section class="p-8 max-w-3xl ma-auto">
+    <h2 class="text-3xl font-bold mb-6 text-center">แบบทดสอบการพัฒนาสังคม</h2>
+    <form id="quiz Form" class="space-y-6">
+      <div><p class="font-semibold">1. ข้อใดคือความหมายของ "การพัฒนาสังคม"?</p>
+        <label><input type="radio" name="q1" value="a">การพัฒนาทางเศรษฐกิจอย่างต่อเนื่อง</label><br>
+        <label><input type="radio" name="q1" value="b">การพัฒนาความสามารถในการแข่งขันของประเทศ</label><br>
+        <label><input type="radio" name="q1" value="c">การเปลี่ยนแปลงที่ทำให้คุณภาพชีวิตของประชาชนดีขึ้นอย่างยั่งยืน</label><br>
+        <label><input type="radio" name="q1" value="d">การเติบโตของอุตสาหกรรมและเทคโนโลยี</label>
+      </div>
+      <div><p class="font-semibold">2. ข้อใดไม่ใช่องค์ประกอบของการพัฒนาสังคม?</p>
+        <label><input type="radio" name="q2" value="a">การศึกษา</label><br>
+        <label><input type="radio" name="q2" value="b">การสื่อสาร</label><br>
+        <label><input type="radio" name="q2" value="c">ความมั่งคั่งทางทรัพย์สินส่วนตัว</label><br>
+        <label><input type="radio" name="q2" value="d">สาธารณสุข</label>
+      </div>
+      <div><p class="font-semibold">3.การส่งเสริมสิทธิและหน้าที่ของพลเมือง เป็นการพัฒนาด้านใด?</p>.</p>
+        <label><input type="radio" name="q3" value="a">ด้านเศรษฐกิจ</label><br>
+        <label><input type="radio" name="q3" value="b">ด้านการเมือง</label><br>
+        <label><input type="radio" name="q3" value="c">ด้านวัฒนธรรม</label><br>
+        <label><input type="radio" name="q3" value="d">ด้านสิ่งแวดล้อม</label>
+      </div>
+      <div><p class="font-semibold">4.การพัฒนาที่ยั่งยืน (Sustainable Development) เน้นสิ่งใด?</p>
+        <label><input type="radio" name="q4" value="a">การเจริญเติบโตทางเศรษฐกิจอย่างรวดเร็ว</label><br>
+        <label><input type="radio" name="q4" value="b">การรักษาสมดุลระหว่างเศรษฐกิจ สังคม และสิ่งแวดล้อม</label><br>
+        <label><input type="radio" name="q4" value="c">การเพิ่มรายได้ประชาชาติต่อหัว</label><br>
+        <label><input type="radio" name="q4" value="d">การขยายตัวของเมืองและอุตสาหกรรม</label>
+      </div>
+      <div><p class="font-semibold">5.ข้อใดคือปัญหาสังคมที่กระทบต่อการพัฒนา?</p>
+        <label><input type="radio" name="q5" value="a">เทคโนโลยีที่พัฒนาเร็ว</label><br>
+        <label><input type="radio" name="q5" value="b">สัดส่วนประชากรในวัยแรงงานที่เพิ่มขึ้น</label><br>
+        <label><input type="radio" name="q5" value="c">ความยากจนและความเหลื่อมล้ำ</label><br>
+         <label><input type="radio" name="q5" value="d">การเปิดเสรีทางการค้า</label>
+      </div>
+      <button type="button" onclick="checkAnswers();" class="bg-red-900 text-white px-6 py-2 rounded-lg shadow hover:bg-red-700">ตรวจคำตอบ</button>
+    </form>
+    <div id="result" class="mt-6 text-xl font-bold text-center"></div>
+   </section>
+  <script>
+    function checkAnswers() {
+      const answers = { q1: "c", q2: "c", q3: "b", q4: "b", q5: "c" };
+      let score = 0;
+      for (let q in answers) {
+        const selected = document.querySelector(`input[name="${q}"]:checked`);
+        if (selected && selected.value === answers[q]) {
+          score++;
+        }
+      }
+      document.getElementById("result").innerText = `คุณได้คะแนน ${score}/5`;
+    }
+  </script>
+  </body>
+</html>
